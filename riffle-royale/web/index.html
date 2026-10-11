@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riffle Royale</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Riffle Royale">
+        <span class="brand-mark">R</span>
+        <span>RIFFLE <b>ROYALE</b></span>
+      </a>
+    </header>
+
+    <section class="intro">
+      <h1>Shiny <em>sweetie curve</em></h1>
+    </section>
+
+    <section class="table" aria-label="Table with dealt cards">
+      <div class="chip chip-50">50</div>
+      <div class="chip chip-100">100</div>
+      <div class="chip chip-5">5</div>
+      <div class="table-rim">
+        <div class="table-inner">
+          <div class="table-title">
+            <div>
+              <span class="label">THE BOARD</span>
+              <strong>Cards on the felt</strong>
+            </div>
+            <div class="target">
+              <span>RIVER</span>
+              <b id="target">—</b>
+            </div>
+          </div>
+          <div id="samples" class="sample-grid" aria-live="polite"></div>
+          <div class="table-actions">
+            <button id="new-round" type="button">DEAL</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hand-wrap">
+      <div class="section-head">
+        <div>
+          <span class="label">YOUR HAND</span>
+          <h2>Make your call</h2>
+        </div>
+        <span class="one-shot">1 BET</span>
+      </div>
+
+      <div class="hand" role="group" aria-label="Your face-down cards">
+        <button class="hand-card" type="button" data-slot="0" aria-pressed="false">
+          <span class="corner">I</span>
+          <span class="card-back"><i>?</i></span>
+          <span class="hand-copy"><b>LEFT</b></span>
+        </button>
+        <button class="hand-card" type="button" data-slot="1" aria-pressed="false">
+          <span class="corner">II</span>
+          <span class="card-back"><i>?</i></span>
+          <span class="hand-copy"><b>RIGHT</b></span>
+        </button>
+      </div>
+
+      <form id="guess-form" class="bet-panel">
+        <div class="input-row">
+          <input id="guess" name="guess" inputmode="numeric" autocomplete="off"
+                 aria-label="Predicted x-coordinate"
+                 placeholder="your number" maxlength="80" disabled>
+          <button id="submit" type="submit" disabled>BET</button>
+        </div>
+        <p id="hint">Choose one face-down card.</p>
+      </form>
+    </section>
+
+    <section id="result" class="result" hidden aria-live="polite"></section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

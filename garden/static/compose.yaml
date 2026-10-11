@@ -1,0 +1,13 @@
+services:
+  shogi-app:
+    build: .
+    ports:
+      - "8001:8001"
+    volumes:
+      - shogi_data:/app/data
+    environment:
+      - DATABASE_PATH=/app/data/shogi.db
+    restart: unless-stopped
+
+volumes:
+  shogi_data:
